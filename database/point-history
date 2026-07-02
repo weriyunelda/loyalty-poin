@@ -1,0 +1,8 @@
+CREATE TABLE point_history (
+    id_history INT AUTO_INCREMENT PRIMARY KEY,
+    id_customer INT,
+    tanggal DATE,
+    transaksi VARCHAR(100),
+    total_belanja DECIMAL(12,2),
+    poin_didapat INT
+);

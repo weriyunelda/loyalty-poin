@@ -1,0 +1,7 @@
+CREATE TABLE customers (
+    id_customer INT AUTO_INCREMENT PRIMARY KEY,
+    nama VARCHAR(100),
+    total_poin INT DEFAULT 0,
+    level VARCHAR(20),
+    terakhir_transaksi DATE
+);

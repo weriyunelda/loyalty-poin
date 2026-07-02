@@ -1,0 +1,7 @@
+CREATE TABLE reward_history (
+    id_reward INT AUTO_INCREMENT PRIMARY KEY,
+    id_customer INT,
+    tanggal DATE,
+    nama_reward VARCHAR(100),
+    poin_ditukar INT
+);

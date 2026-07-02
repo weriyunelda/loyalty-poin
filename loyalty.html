@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Poin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1><i class="fas fa-crown"></i> Loyalty Poin</h1>
+            <p>Kelola Program Loyalitas Pelanggan Anda</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <div class="toolbar">
+                <form id="searchForm" class="search-form">
+                    <input type="text" id="searchInput" name="search" placeholder="Cari nama atau ID customer...">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Cari
+                    </button>
+                    <button type="button" id="resetBtn" class="btn btn-secondary">
+                        <i class="fas fa-times"></i> Reset
+                    </button>
+                </form>
+                <button type="button" id="addCustomerBtn" class="btn btn-primary">
+                    <i class="fas fa-plus-circle"></i> Tambah Customer Baru
+                </button>
+            </div>
+
+            <div id="searchMessage" class="info-box" hidden></div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-id-card"></i> ID Customer</th>
+                        <th><i class="fas fa-user"></i> Nama</th>
+                        <th><i class="fas fa-coins"></i> Total Poin</th>
+                        <th><i class="fas fa-medal"></i> Level</th>
+                        <th><i class="fas fa-clock"></i> Transaksi Terakhir</th>
+                        <th><i class="fas fa-cogs"></i> Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="customerModal" class="modal">
+        <div class="modal-content">
+            <h2 id="customerModalTitle"><i class="fas fa-user-plus"></i> Tambah Customer Baru</h2>
+            <form id="customerForm">
+                <input type="hidden" id="customerId" name="customerId">
+                <input type="hidden" id="mode" name="mode" value="add">
+
+                <div class="form-group">
+                    <label for="customerName">
+                        <i class="fas fa-user"></i> Nama Customer
+                    </label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Masukkan nama customer" required>
+                </div>
+
+                <div class="modal-buttons">
+                    <button type="button" class="btn btn-cancel" id="cancelModalBtn">
+                        <i class="fas fa-times"></i> Batal
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="submitModalBtn">
+                        <i class="fas fa-save"></i> <span id="submitModalText">Tambah</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteCustomerModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-exclamation-triangle modal-icon"></i>
+            <h2>Hapus Customer?</h2>
+            <p>Yakin ingin menghapus customer <strong id="deleteCustomerName"></strong> (ID: <strong id="deleteCustomerId"></strong>)?</p>
+            <p class="delete-warning">⚠️ Data riwayat poin dan reward juga akan dihapus.</p>
+            <div class="modal-buttons">
+                <button type="button" class="btn btn-cancel" id="cancelDeleteBtn">
+                    <i class="fas fa-times"></i> Batal
+                </button>
+                <button type="button" class="btn btn-delete" id="confirmDeleteBtn">
+                    <i class="fas fa-trash"></i> Hapus
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
